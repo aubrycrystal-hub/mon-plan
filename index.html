@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Prépa Été 2026 — Basket D3</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F4621F;
+    --orange-light: #FF8C52;
+    --court: #1A3A2A;
+    --court-mid: #244D38;
+    --court-light: #2E6347;
+    --cream: #F5F0E8;
+    --sand: #E8DFC8;
+    --dark: #111;
+    --text: #1A1A1A;
+    --muted: #6B6660;
+    --line: #D4CCB8;
+    --red: #C0392B;
+    --red-light: #E74C3C;
+    --blue: #1A5276;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--court);
+    color: var(--cream);
+    padding: 48px 40px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border: 2px solid rgba(244,98,31,0.2);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: 60px;
+    width: 200px; height: 200px;
+    border: 2px solid rgba(244,98,31,0.12);
+    border-radius: 50%;
+  }
+  .badge {
+    background: var(--orange);
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 0.95;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .header h1 span { color: var(--orange); }
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+  }
+  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange-light);
+    font-weight: 500;
+  }
+  .meta-value { font-size: 15px; font-weight: 500; color: var(--cream); }
+
+  /* LAYOUT */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* TABS */
+  .tabs-wrapper {
+    background: var(--court-mid);
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .tabs {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    color: rgba(245,240,232,0.5);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    padding: 14px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: rgba(245,240,232,0.8); }
+  .tab-btn.active {
+    color: var(--orange);
+    border-bottom-color: var(--orange);
+  }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* SECTIONS */
+  section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--court);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  /* CARDS */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--line);
+  }
+  .card-icon { font-size: 24px; margin-bottom: 10px; }
+  .card h3 { font-weight: 700; font-size: 14px; margin-bottom: 6px; color: var(--court); }
+  .card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* SCENARIO BANNER */
+  .scenario-banner {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .scenario-banner.s1 { background: rgba(26,82,118,0.1); border: 2px solid var(--blue); }
+  .scenario-banner.s2 { background: rgba(192,57,43,0.08); border: 2px solid var(--red); }
+  .scenario-banner .sb-icon { font-size: 28px; flex-shrink: 0; }
+  .scenario-banner h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .scenario-banner.s1 h3 { color: var(--blue); }
+  .scenario-banner.s2 h3 { color: var(--red); }
+  .scenario-banner p { font-size: 13px; color: var(--muted); }
+
+  /* PHASE CARDS */
+  .phase {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    margin-bottom: 24px;
+  }
+  .phase-header {
+    background: var(--court);
+    color: var(--cream);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .phase-header.phase2 { background: var(--court-mid); }
+  .phase-header.phase3 { background: var(--court-light); }
+  .phase-header.phase4 { background: var(--orange); }
+  .phase-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: rgba(255,255,255,0.2);
+    line-height: 1;
+  }
+  .phase-info h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; margin-bottom: 2px; }
+  .phase-info p { font-size: 12px; opacity: 0.7; letter-spacing: 0.5px; }
+  .phase-body { padding: 24px; }
+  .phase-objective {
+    background: var(--cream);
+    border-left: 3px solid var(--orange);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--court);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  /* WEEKLY PLAN */
+  .week-grid { display: grid; gap: 8px; }
+  .day-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .day-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    padding-top: 8px;
+  }
+  .day-label.weekend { color: var(--orange); }
+  .day-label.training { color: var(--court-light); font-weight: 700; }
+  .session {
+    background: var(--cream);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+    border: 1px solid var(--line);
+  }
+  .session.off { background: white; color: var(--muted); font-style: italic; font-size: 12px; }
+  .session.has-training { border-left: 3px solid var(--court-light); }
+  .session-type {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+    margin-right: 4px;
+  }
+  .type-basket { background: rgba(26,58,42,0.12); color: var(--court); }
+  .type-physique { background: rgba(244,98,31,0.12); color: var(--orange); }
+  .type-mobilite { background: rgba(100,160,120,0.2); color: #2E6347; }
+  .type-cardio { background: rgba(180,120,50,0.15); color: #7A5020; }
+  .type-club { background: rgba(46,99,71,0.2); color: #1A3A2A; border: 1px solid rgba(46,99,71,0.4); }
+
+  .session strong { display: block; font-weight: 600; color: var(--text); margin-bottom: 2px; font-size: 13px; }
+  .session span { color: var(--muted); font-size: 12px; }
+
+  /* ROUTINES */
+  .routine-block {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .routine-title {
+    background: var(--court);
+    color: var(--cream);
+    padding: 12px 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .routine-title .rt-badge {
+    background: var(--orange);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+  .routine-content { padding: 16px 20px; }
+  .exercise-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .exercise-list li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+  .exercise-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .ex-name { font-weight: 500; }
+  .ex-note { font-size: 12px; color: var(--muted); }
+  .ex-sets { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--orange); font-weight: 500; white-space: nowrap; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--court);
+    color: var(--cream);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .highlight-box h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--orange);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .highlight-box ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .highlight-box li { font-size: 13px; padding-left: 16px; position: relative; opacity: 0.9; }
+  .highlight-box li::before { content: '▸'; position: absolute; left: 0; color: var(--orange); }
+
+  /* TIPS */
+  .tip-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+  .tip {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+    align-items: start;
+    background: white;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+  }
+  .tip-num { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--orange); line-height: 1; }
+  .tip-text strong { display: block; font-size: 14px; margin-bottom: 2px; color: var(--court); }
+  .tip-text p { font-size: 13px; color: var(--muted); }
+
+  /* NUTRITION — ENHANCED */
+  .nutrition-intro {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .nutrition-intro h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--court);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .macro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .macro-card {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+    border: 1px solid var(--line);
+  }
+  .macro-card .macro-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--orange);
+    line-height: 1;
+  }
+  .macro-card .macro-unit {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .macro-card .macro-name {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--court);
+    margin-bottom: 4px;
+  }
+  .macro-card .macro-note { font-size: 11px; color: var(--muted); }
+
+  .meal-plan-grid {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .meal-block {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .meal-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+  }
+  .meal-icon { font-size: 20px; }
+  .meal-name { font-weight: 700; font-size: 14px; color: var(--court); }
+  .meal-cal {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--orange);
+    font-weight: 500;
+  }
+  .meal-body { padding: 14px 18px; }
+  .meal-body .meal-type-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    align-items: start;
+  }
+  .meal-body .meal-type-row:last-child { margin-bottom: 0; }
+  .meal-type-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 1px;
+  }
+  .meal-options { display: flex; flex-direction: column; gap: 3px; }
+  .meal-option {
+    font-size: 13px;
+    color: var(--text);
+    padding-left: 12px;
+    position: relative;
+  }
+  .meal-option::before { content: '·'; position: absolute; left: 2px; color: var(--orange); font-weight: 700; }
+
+  .day-type-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .day-type-btn {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--muted);
+  }
+  .day-type-btn.active {
+    background: var(--court);
+    color: var(--cream);
+    border-color: var(--court);
+  }
+  .day-type-content { display: none; }
+  .day-type-content.active { display: block; }
+
+  .calorie-bar {
+    margin: 16px 0;
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+  }
+  .calorie-bar h5 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .bar-wrap {
+    height: 8px;
+    background: var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .bar-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); font-family: 'DM Mono', monospace; }
+
+  .foods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .foods-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    padding: 14px;
+  }
+  .foods-card h5 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--court);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .foods-card ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .foods-card li { font-size: 12px; color: var(--text); padding-left: 14px; position: relative; }
+  .foods-card li::before { content: '✓'; position: absolute; left: 0; color: var(--orange); font-size: 10px; font-weight: 700; }
+  .foods-card li.no::before { content: '✗'; color: var(--red-light); }
+
+  /* PROGRESS */
+  .progress-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+  .progress-table th {
+    background: var(--court);
+    color: var(--cream);
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .progress-table td { padding: 10px 14px; border-bottom: 1px solid var(--line); background: white; }
+  .progress-table tr:nth-child(even) td { background: var(--cream); }
+  .progress-table td:first-child { font-weight: 600; color: var(--court); }
+
+  .goal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .goal-card {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .goal-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--orange);
+  }
+  .goal-phase {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .goal-metric {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--orange);
+    line-height: 1;
+  }
+  .goal-unit { font-size: 14px; color: var(--muted); margin-left: 4px; }
+  .goal-desc { font-size: 13px; color: var(--text); margin-top: 4px; font-weight: 500; }
+  .goal-note { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  /* MATERIEL */
+  .materiel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  .mat-card { background: white; border-radius: 8px; border: 1px solid var(--line); padding: 16px; }
+  .mat-card h4 { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--court); margin-bottom: 10px; }
+  .mat-card ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .mat-card li { font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 6px; }
+  .mat-card li::before { content: '✓'; color: var(--orange); font-weight: 700; font-size: 12px; }
+
+  /* FOOTER */
+  .footer { background: var(--court); color: rgba(245,240,232,0.5); padding: 24px 40px; font-size: 12px; text-align: center; }
+  .footer strong { color: var(--orange); }
+
+  /* DIVIDER */
+  hr { border: none; border-top: 1px solid var(--line); margin: 20px 0; }
+
+  @media (max-width: 600px) {
+    .header { padding: 32px 20px; }
+    .container { padding: 0 16px; }
+    .materiel-grid { grid-template-columns: 1fr; }
+    .day-row { grid-template-columns: 70px 1fr; }
+    .macro-grid { grid-template-columns: 1fr 1fr; }
+    .tab-btn { font-size: 13px; padding: 12px 12px; }
+  }
+
+  @media print {
+    .tabs-wrapper { display: none; }
+    .tab-content { display: block !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="container">
+    <div class="badge">SAISON 2026–2027</div>
+    <h1>PLAN PRÉPA<br><span>ÉTÉ 2026</span></h1>
+    <p style="color:rgba(245,240,232,0.65); font-size:14px; max-width:520px;">Programme individuel de préparation physique, technique et nutritionnelle — D3 Loire-Atlantique. Ailière / Meneuse de dépannage.</p>
+    <div class="header-meta">
+      <div class="meta-item"><span class="meta-label">Durée</span><span class="meta-value">~14–15 semaines</span></div>
+      <div class="meta-item"><span class="meta-label">Démarrage</span><span class="meta-value">1er ou 15 juin</span></div>
+      <div class="meta-item"><span class="meta-label">Séances/semaine</span><span class="meta-value">3 à 4</span></div>
+      <div class="meta-item"><span class="meta-label">Objectif physique</span><span class="meta-value">–5 à –7% masse grasse</span></div>
+      <div class="meta-item"><span class="meta-label">Objectif terrain</span><span class="meta-value">Montée en D3 🏀</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('profil')">Profil</button>
+    <button class="tab-btn" onclick="showTab('programme')">Programme</button>
+    <button class="tab-btn" onclick="showTab('routines')">Routines</button>
+    <button class="tab-btn" onclick="showTab('basket')">Basket</button>
+    <button class="tab-btn" onclick="showTab('nutrition')">Nutrition</button>
+    <button class="tab-btn" onclick="showTab('progression')">Progression</button>
+    <button class="tab-btn" onclick="showTab('mental')">Mental</button>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ===== TAB : PROFIL ===== -->
+<div id="tab-profil" class="tab-content active">
+  <section>
+    <div class="section-label">Point de départ</div>
+    <div class="section-title">TON PROFIL DE JOUEUSE</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">💪</div>
+        <h3>Points forts</h3>
+        <p>Excellente défenseuse. Tireuse sans complexe (mi-distance, 3 pts à 45° et face). Contre-attaque + layup. Motivation et leadership. Masse musculaire importante (~60%).</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Axes de progression</h3>
+        <p>Défense sur meneuse rapide (vitesse latérale). Coupes en attaque (lecture du jeu). Gestion balle sous pression. Rebond malgré la taille. Légèreté athlétique.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏃‍♀️</div>
+        <h3>Contexte physique</h3>
+        <p>168 cm / ~75 kg. Masse grasse ~35%, masse musculaire ~60%. Légère entorse cheville à surveiller. Objectif : être plus sèche, plus explosive, plus athlétique.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗓️</div>
+        <h3>Contraintes</h3>
+        <p>37h/semaine. Séances possibles lundi→jeudi soir. Vendredi = famille/amis. 1–2 séances le week-end (terrain extérieur). Entraînements club mardi + vendredi (jusqu'au ~7 juillet).</p>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:28px;">
+      <h4>📅 DEUX SCÉNARIOS DE DÉMARRAGE</h4>
+      <ul>
+        <li><strong>Scénario A — 1er juin :</strong> Saison terminée, pas de drapeau. Plan sur ~13 semaines avec Phase 1 dès le 2 juin.</li>
+        <li><strong>Scénario B — 15 juin :</strong> Tu joues le drapeau jusqu'à mi-juin. Plan sur ~11 semaines, Phase 1 allégée en parallèle (mobilité uniquement), programme complet dès le 15/06.</li>
+        <li>Dans les deux cas, les phases et le contenu sont identiques — seuls les dates décalent. Consulte l'onglet <strong>Programme</strong> pour les deux calendriers.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- ===== TAB : PROGRAMME ===== -->
+<div id="tab-programme" class="tab-content">
+  <section>
+    <div class="section-label">Calendrier</div>
+    <div class="section-title">TON PROGRAMME SEMAINE PAR SEMAINE</div>
+
+    <!-- SCENARIO SWITCHER -->
+    <div class="day-type-tabs">
+      <button class="day-type-btn active" onclick="showDayType('scenA', this)">📅 Scénario A — Démarrage 1er juin</button>
+      <button class="day-type-btn" onclick="showDayType('scenB', this)">📅 Scénario B — Démarrage 15 juin</button>
+    </div>
+
+    <!-- SCÉNARIO A -->
+    <div id="daytype-scenA" class="day-type-content active">
+      <div class="scenario-banner s1">
+        <div class="sb-icon">🏁</div>
+        <div>
+          <h3>SCÉNARIO A — DÉMARRAGE 1ER JUIN</h3>
+          <p>Saison terminée fin mai. Plan de 13 semaines jusqu'à fin août. Les entraînements club sont terminés.</p>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <div class="phase-info">
+            <h3>PHASE 1 — TRANSITION & BASE</h3>
+            <p>Semaines 1–2 · 2–15 juin · Scénario A</p>
+          </div>
+          <div class="phase-num">1</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-objective">🎯 Sortir de saison proprement. Créer la routine. Corps en mode reconstruction.</div>
+          <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">Pas de séance basket les soirs de semaine — seulement à la maison. On pose les bases physiques sans se blesser.</p>
+          <div class="week-grid">
+            <div class="day-row"><div class="day-label">Lundi</div><div class="session"><span class="session-type type-mobilite">Mobilité</span><strong>Routine mobilité + cheville</strong><span>20–25 min · tapis · à la maison</span></div></div>
+            <div class="day-row"><div class="day-label">Mardi</div><div class="session off">Repos actif — marche 20–30 min</div></div>
+            <div class="day-row"><div class="day-label">Mercredi</div><div class="session"><span class="session-type type-physique">Renfo</span><strong>Routine A — Fondation</strong><span>30–35 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Jeudi</div><div class="session off">Repos</div></div>
+            <div class="day-row"><div class="day-label">Vendredi</div><div class="session off">Famille / amis — repos</div></div>
+            <div class="day-row"><div class="day-label weekend">Weekend</div><div class="session"><span class="session-type type-basket">Basket</span><strong>Séance technique terrain (Phase 1)</strong><span>45–60 min · 1 séance dans le weekend</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header phase2">
+          <div class="phase-info">
+            <h3>PHASE 2 — CONSTRUCTION PHYSIQUE</h3>
+            <p>Semaines 3–7 · 16 juin → 20 juillet · Scénario A</p>
+          </div>
+          <div class="phase-num">2</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-objective">🎯 Construire l'explosivité, le cardio, affiner le corps. Montée en charge progressive.</div>
+          <div class="week-grid">
+            <div class="day-row"><div class="day-label">Lundi</div><div class="session"><span class="session-type type-mobilite">Mobilité</span><strong>Routine mobilité + activation</strong><span>20 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Mardi</div><div class="session"><span class="session-type type-physique">Renfo+Plyo</span><strong>Circuit B + plyométrie</strong><span>40 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Mercredi</div><div class="session off">Repos ou marche légère</div></div>
+            <div class="day-row"><div class="day-label">Jeudi</div><div class="session"><span class="session-type type-cardio">Cardio</span><strong>Fractionné type basket</strong><span>25–30 min · extérieur ou couloir</span></div></div>
+            <div class="day-row"><div class="day-label">Vendredi</div><div class="session off">Famille / amis — repos</div></div>
+            <div class="day-row"><div class="day-label weekend">Samedi</div><div class="session"><span class="session-type type-basket">Basket</span><strong>Séance technique complète (Phase 2)</strong><span>60–75 min · terrain extérieur</span></div></div>
+            <div class="day-row"><div class="day-label weekend">Dimanche</div><div class="session"><span class="session-type type-physique">Renfo léger</span><strong>Gainage + hanches + mollets</strong><span>25 min · maison</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header phase3">
+          <div class="phase-info">
+            <h3>PHASE 3 — AFFÛTAGE TECHNIQUE</h3>
+            <p>Semaines 8–11 · 21 juillet → 16 août · Scénario A</p>
+          </div>
+          <div class="phase-num">3</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-objective">🎯 Consolider le physique. Monter en qualité technique. Travailler sous contrainte de match.</div>
+          <div class="week-grid">
+            <div class="day-row"><div class="day-label">Lundi</div><div class="session"><span class="session-type type-mobilite">Mobilité</span><strong>Mobilité + activation neuromusculaire</strong><span>20 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Mardi</div><div class="session"><span class="session-type type-physique">Renfo</span><strong>Circuit C — maintien</strong><span>35 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Mercredi</div><div class="session off">Repos</div></div>
+            <div class="day-row"><div class="day-label">Jeudi</div><div class="session"><span class="session-type type-cardio">Cardio</span><strong>Fractionné + travail défensif</strong><span>30 min · slides, angles, réactivité</span></div></div>
+            <div class="day-row"><div class="day-label">Vendredi</div><div class="session off">Famille / amis — repos</div></div>
+            <div class="day-row"><div class="day-label weekend">Samedi</div><div class="session"><span class="session-type type-basket">Basket</span><strong>Séance technique avancée (Phase 3)</strong><span>75–90 min · tirs en fatigue, mène sous pression</span></div></div>
+            <div class="day-row"><div class="day-label weekend">Dimanche</div><div class="session"><span class="session-type type-physique">Renfo</span><strong>Gainage + fessiers + cheville</strong><span>25–30 min · maison</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header phase4">
+          <div class="phase-info">
+            <h3>PHASE 4 — MISE EN FORME PRÉ-SAISON</h3>
+            <p>Semaines 12–13 · 17–31 août · Scénario A</p>
+          </div>
+          <div class="phase-num">4</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-objective">🎯 Arriver fraîche, en confiance, prête à jouer à 100% dès le premier entraînement.</div>
+          <div class="week-grid">
+            <div class="day-row"><div class="day-label">Lundi</div><div class="session"><span class="session-type type-mobilite">Mobilité</span><strong>Routine mobilité + activation</strong><span>20 min</span></div></div>
+            <div class="day-row"><div class="day-label">Mardi</div><div class="session"><span class="session-type type-physique">Renfo léger</span><strong>Circuit allégé — maintien</strong><span>30 min</span></div></div>
+            <div class="day-row"><div class="day-label">Mercredi</div><div class="session off">Repos</div></div>
+            <div class="day-row"><div class="day-label">Jeudi</div><div class="session"><span class="session-type type-cardio">Cardio léger</span><strong>Fractionné court + défense</strong><span>25 min</span></div></div>
+            <div class="day-row"><div class="day-label">Vendredi</div><div class="session off">Famille / amis — repos complet</div></div>
+            <div class="day-row"><div class="day-label weekend">Samedi</div><div class="session"><span class="session-type type-basket">Basket</span><strong>Séance match-like</strong><span>60–90 min · simulation, tirs compétition, finitions</span></div></div>
+            <div class="day-row"><div class="day-label weekend">Dimanche</div><div class="session off">Repos — visualisation mentale</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCÉNARIO B -->
+    <div id="daytype-scenB" class="day-type-content">
+      <div class="scenario-banner s2">
+        <div class="sb-icon">🏆</div>
+        <div>
+          <h3>SCÉNARIO B — DÉMARRAGE 15 JUIN</h3>
+          <p>Tu joues le drapeau jusqu'à mi-juin. Du 1er au 14 juin : mobilité uniquement + entraînements club. Plan complet à partir du 15 juin — 11 semaines.</p>
+        </div>
+      </div>
+
+      <div class="phase" style="border: 2px dashed var(--line);">
+        <div class="phase-header" style="background: #555;">
+          <div class="phase-info">
+            <h3>PÉRIODE DRAPEAU (avant le plan)</h3>
+            <p>1–14 juin · Entraînements club + compétition</p>
+          </div>
+          <div class="phase-num">0</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-objective">⚠️ Tu joues encore. L'objectif c'est de ne pas te blesser et d'arriver fraîche aux matchs.</div>
+          <div class="week-grid">
+            <div class="day-row"><div class="day-label training">Mardi</div><div class="session has-training"><span class="session-type type-club">Club</span><strong>Entraînement club</strong><span>Présence normale, bonne récup après</span></div></div>
+            <div class="day-row"><div class="day-label">Mercredi</div><div class="session"><span class="session-type type-mobilite">Mobilité</span><strong>Routine mobilité légère uniquement</strong><span>15–20 min · maison — pas de renfo</span></div></div>
+            <div class="day-row"><div class="day-label training">Vendredi</div><div class="session has-training"><span class="session-type type-club">Club</span><strong>Entraînement club</strong><span>Présence normale</span></div></div>
+            <div class="day-row"><div class="day-label weekend">Weekend</div><div class="session has-training"><span class="session-type type-club">Compét</span><strong>Match drapeau si programmé</strong><span>Donner tout, récupérer après</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <div class="phase-info">
+            <h3>PHASE 1 — TRANSITION & BASE</h3>
+            <p>Semaines 1–2 · 15–28 juin · Scénario B</p>
+          </div>
+          <div class="phase-num">1</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-objective">🎯 Sortir de la compétition. Créer la routine estivale. Corps en reconstruction.</div>
+          <div class="week-grid">
+            <div class="day-row"><div class="day-label">Lundi</div><div class="session"><span class="session-type type-mobilite">Mobilité</span><strong>Routine mobilité + cheville</strong><span>20–25 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Mardi</div><div class="session off">Repos actif — marche 20–30 min</div></div>
+            <div class="day-row"><div class="day-label">Mercredi</div><div class="session"><span class="session-type type-physique">Renfo</span><strong>Routine A — Fondation</strong><span>30–35 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Jeudi</div><div class="session off">Repos</div></div>
+            <div class="day-row"><div class="day-label">Vendredi</div><div class="session off">Famille / amis — repos</div></div>
+            <div class="day-row"><div class="day-label weekend">Weekend</div><div class="session"><span class="session-type type-basket">Basket</span><strong>Séance technique terrain (Phase 1)</strong><span>45–60 min · 1 séance dans le weekend</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header phase2">
+          <div class="phase-info">
+            <h3>PHASE 2 — CONSTRUCTION PHYSIQUE</h3>
+            <p>Semaines 3–6 · 29 juin → 26 juillet · Scénario B</p>
+          </div>
+          <div class="phase-num">2</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-objective">🎯 Construire l'explosivité, le cardio, affiner le corps.</div>
+          <div class="week-grid">
+            <div class="day-row"><div class="day-label">Lundi</div><div class="session"><span class="session-type type-mobilite">Mobilité</span><strong>Routine mobilité + activation</strong><span>20 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Mardi</div><div class="session"><span class="session-type type-physique">Renfo+Plyo</span><strong>Circuit B + plyométrie</strong><span>40 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Mercredi</div><div class="session off">Repos ou marche</div></div>
+            <div class="day-row"><div class="day-label">Jeudi</div><div class="session"><span class="session-type type-cardio">Cardio</span><strong>Fractionné type basket</strong><span>25–30 min · extérieur</span></div></div>
+            <div class="day-row"><div class="day-label">Vendredi</div><div class="session off">Famille / amis — repos</div></div>
+            <div class="day-row"><div class="day-label weekend">Samedi</div><div class="session"><span class="session-type type-basket">Basket</span><strong>Séance technique complète (Phase 2)</strong><span>60–75 min · terrain extérieur</span></div></div>
+            <div class="day-row"><div class="day-label weekend">Dimanche</div><div class="session"><span class="session-type type-physique">Renfo léger</span><strong>Gainage + hanches + mollets</strong><span>25 min · maison</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header phase3">
+          <div class="phase-info">
+            <h3>PHASE 3 — AFFÛTAGE TECHNIQUE</h3>
+            <p>Semaines 7–9 · 27 juillet → 16 août · Scénario B</p>
+          </div>
+          <div class="phase-num">3</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-objective">🎯 Technique avancée, tirs en fatigue, gestion balle sous pression.</div>
+          <div class="week-grid">
+            <div class="day-row"><div class="day-label">Lundi</div><div class="session"><span class="session-type type-mobilite">Mobilité</span><strong>Mobilité + activation</strong><span>20 min</span></div></div>
+            <div class="day-row"><div class="day-label">Mardi</div><div class="session"><span class="session-type type-physique">Renfo</span><strong>Circuit C — maintien</strong><span>35 min · maison</span></div></div>
+            <div class="day-row"><div class="day-label">Mercredi</div><div class="session off">Repos</div></div>
+            <div class="day-row"><div class="day-label">Jeudi</div><div class="session"><span class="session-type type-cardio">Cardio</span><strong>Fractionné + travail défensif</strong><span>30 min</span></div></div>
+            <div class="day-row"><div class="day-label">Vendredi</div><div class="session off">Famille / amis — repos</div></div>
+            <div class="day-row"><div class="day-label weekend">Samedi</div><div class="session"><span class="session-type type-basket">Basket</span><strong>Séance technique avancée (Phase 3)</strong><span>75–90 min</span></div></div>
+            <div class="day-row"><div class="day-label weekend">Dimanche</div><div class="session"><span class="session-type type-physique">Renfo</span><strong>Gainage + fessiers + cheville</strong><span>25–30 min</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header phase4">
+          <div class="phase-info">
+            <h3>PHASE 4 — MISE EN FORME PRÉ-SAISON</h3>
+            <p>Semaines 10–11 · 17–31 août · Scénario B</p>
+          </div>
+          <div class="phase-num">4</div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-objective">🎯 Arriver fraîche, confiante, prête à 100% dès septembre.</div>
+          <div class="week-grid">
+            <div class="day-row"><div class="day-label">Lundi</div><div class="session"><span class="session-type type-mobilite">Mobilité</span><strong>Routine mobilité + activation</strong><span>20 min</span></div></div>
+            <div class="day-row"><div class="day-label">Mardi</div><div class="session"><span class="session-type type-physique">Renfo léger</span><strong>Circuit allégé — maintien</strong><span>30 min</span></div></div>
+            <div class="day-row"><div class="day-label">Mercredi</div><div class="session off">Repos</div></div>
+            <div class="day-row"><div class="day-label">Jeudi</div><div class="session"><span class="session-type type-cardio">Cardio léger</span><strong>Fractionné court + défense</strong><span>25 min</span></div></div>
+            <div class="day-row"><div class="day-label">Vendredi</div><div class="session off">Famille / amis — repos complet</div></div>
+            <div class="day-row"><div class="day-label weekend">Samedi</div><div class="session"><span class="session-type type-basket">Basket</span><strong>Séance match-like</strong><span>60–90 min · simulation, finitions</span></div></div>
+            <div class="day-row"><div class="day-label weekend">Dimanche</div><div class="session off">Repos — visualisation mentale</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📌 NOTE SUR LES ENTRAÎNEMENTS CLUB (jusqu'au ~7 juillet)</h4>
+      <ul>
+        <li>Les mardis et vendredis soir avec le club remplacent toute séance prévue ces jours-là dans le plan.</li>
+        <li>Si l'entraînement club du vendredi est annulé → profites-en pour récupérer, pas pour rajouter une séance.</li>
+        <li>Si tu te sens fatiguée après un entraînement club le mardi → la séance du mercredi devient mobilité uniquement.</li>
+        <li>La priorité avant juillet c'est de ne pas s'épuiser. Le vrai travail estival commence une fois les entraînements terminés.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- ===== TAB : ROUTINES ===== -->
+<div id="tab-routines" class="tab-content">
+  <section>
+    <div class="section-label">Détail des exercices</div>
+    <div class="section-title">LES ROUTINES EN DÉTAIL</div>
+
+    <div class="routine-block">
+      <div class="routine-title">🦵 ROUTINE MOBILITÉ QUOTIDIENNE <span class="rt-badge">20 MIN · TOUTES PHASES</span></div>
+      <div class="routine-content">
+        <p style="font-size:12px; color:var(--muted); margin-bottom:14px;">À faire en ouverture de chaque séance. Focus cheville, hanches, genoux — les zones clés pour le basket et pour prévenir les récidives.</p>
+        <ul class="exercise-list">
+          <li><div><div class="ex-name">Rotations cheville (chaque sens)</div><div class="ex-note">Pied posé sur genou opposé, tourner lentement dans les 2 sens</div></div><span class="ex-sets">3×10 / pied</span></li>
+          <li><div><div class="ex-name">Fire hydrant (ouverture hanche)</div><div class="ex-note">À 4 pattes, genou fléchi, élever le genou sur le côté — ne pas tourner le bassin</div></div><span class="ex-sets">2×15 / côté</span></li>
+          <li><div><div class="ex-name">Fente dynamique avec rotation</div><div class="ex-note">Fente avant, rotation du torse du côté du pied avant, revenir</div></div><span class="ex-sets">5 / côté</span></li>
+          <li><div><div class="ex-name">Squat pause en bas</div><div class="ex-note">Descendre lentement, tenir 3 sec en bas, remonter — travail mobilité cheville/hanche</div></div><span class="ex-sets">10 reps</span></li>
+          <li><div><div class="ex-name">Hip flexor stretch (genou au sol)</div><div class="ex-note">Fente basse, pousser le bassin vers l'avant, tenir</div></div><span class="ex-sets">45 sec / côté</span></li>
+          <li><div><div class="ex-name">Cat-cow</div><div class="ex-note">À 4 pattes, inspiration dos creux / expiration dos rond — lentement</div></div><span class="ex-sets">10 reps lents</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="routine-block">
+      <div class="routine-title">💪 ROUTINE A — RENFO FONDATION <span class="rt-badge">PHASE 1 · 30–35 MIN</span></div>
+      <div class="routine-content">
+        <p style="font-size:12px; color:var(--muted); margin-bottom:14px;">3 tours. Récupération 60 sec entre les tours. Tout au poids du corps ou avec tes élastiques / haltère 10 kg.</p>
+        <ul class="exercise-list">
+          <li><div><div class="ex-name">Glute bridge bilatéral (élastique)</div><div class="ex-note">Élastique sur les cuisses, monter le bassin, tenir 2 sec en haut</div></div><span class="ex-sets">3×15</span></li>
+          <li><div><div class="ex-name">Squat goblet (10 kg)</div><div class="ex-note">Pieds à largeur d'épaules, haltère contre la poitrine, cuisses parallèles</div></div><span class="ex-sets">3×12</span></li>
+          <li><div><div class="ex-name">Planche avant</div><div class="ex-note">Corps droit, respiration régulière, ne pas laisser les hanches tomber</div></div><span class="ex-sets">3×30 sec</span></li>
+          <li><div><div class="ex-name">Step-up sur chaise / marche</div><div class="ex-note">Montée d'une jambe, contrôle de la descente — ne pas rebondir</div></div><span class="ex-sets">3×10 / jambe</span></li>
+          <li><div><div class="ex-name">Push-up (genoux si besoin)</div><div class="ex-note">Corps droit, coudes à 45°, amplitude complète</div></div><span class="ex-sets">3×10</span></li>
+          <li><div><div class="ex-name">Gainage latéral</div><div class="ex-note">Sur le côté, bassin haut, tenir sans bouger</div></div><span class="ex-sets">3×20 sec / côté</span></li>
+          <li><div><div class="ex-name">Calf raises — mollets (sur une marche)</div><div class="ex-note">Descente lente (3 sec), montée normale. Clé pour renforcer la cheville.</div></div><span class="ex-sets">3×15</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="routine-block">
+      <div class="routine-title">⚡ ROUTINE B — RENFO + PLYOMÉTRIE <span class="rt-badge">PHASE 2–3 · 40 MIN</span></div>
+      <div class="routine-content">
+        <p style="font-size:12px; color:var(--muted); margin-bottom:14px;">3–4 tours. Récup 90 sec entre tours. La plyométrie est en fin de bloc pour ne pas compromettre la qualité du renfo.</p>
+        <ul class="exercise-list">
+          <li><div><div class="ex-name">Jump squat</div><div class="ex-note">Descente contrôlée, explosion vers le haut, réception souple pieds entiers</div></div><span class="ex-sets">4×8</span></li>
+          <li><div><div class="ex-name">Glute bridge unilatéral (élastique)</div><div class="ex-note">Une jambe en l'air, monter le bassin, 2 sec en haut</div></div><span class="ex-sets">3×12 / jambe</span></li>
+          <li><div><div class="ex-name">Fente marchée avec haltère 10 kg</div><div class="ex-note">Haltère en goblet, fente avant alternée, contrôle du genou arrière</div></div><span class="ex-sets">3×10 / jambe</span></li>
+          <li><div><div class="ex-name">Lateral bounds (sauts latéraux 1 pied)</div><div class="ex-note">Sauter d'un pied sur l'autre latéralement, réception contrôlée sur 1 pied, amortir</div></div><span class="ex-sets">3×8 / côté</span></li>
+          <li><div><div class="ex-name">Push-up explosif</div><div class="ex-note">Pousser fort pour décoller les mains — si trop dur, push-up classique</div></div><span class="ex-sets">3×8</span></li>
+          <li><div><div class="ex-name">Dead bug</div><div class="ex-note">Sur le dos, bras et jambe opposés tendus vers le bas alternativement, dos collé au sol</div></div><span class="ex-sets">3×10 / côté</span></li>
+          <li><div><div class="ex-name">Calf raises excentriques (marche)</div><div class="ex-note">Montée sur 2 pieds, descente lente sur 1 pied. Prévention rechute cheville.</div></div><span class="ex-sets">3×12 / jambe</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="routine-block">
+      <div class="routine-title">🏃‍♀️ CARDIO FRACTIONNÉ TYPE BASKET <span class="rt-badge">25–30 MIN</span></div>
+      <div class="routine-content">
+        <p style="font-size:12px; color:var(--muted); margin-bottom:14px;">À faire sur ta rue, dans un couloir ou ton jardin. Simule les efforts intermittents du basket. Idéal si tu as aussi une corde à sauter.</p>
+        <ul class="exercise-list">
+          <li><div><div class="ex-name">Échauffement footing léger</div><div class="ex-note">Trot à 60% de l'effort max</div></div><span class="ex-sets">5 min</span></li>
+          <li><div><div class="ex-name">Sprint court (10–15m) → retour marche</div><div class="ex-note">8 répétitions. Sprint max, récup marche 30 sec. Simule transition défense-attaque.</div></div><span class="ex-sets">8×15m</span></li>
+          <li><div><div class="ex-name">Carioca / pas chassés latéraux</div><div class="ex-note">Déplacement 8m aller-retour. 5 séries. Clé pour la défense sur meneuse.</div></div><span class="ex-sets">5×8m</span></li>
+          <li><div><div class="ex-name">Defensive slides sur place</div><div class="ex-note">Position basse, pieds épaules, glisser gauche-droite rapidement. 20 sec ON / 10 sec OFF.</div></div><span class="ex-sets">6 rounds</span></li>
+          <li><div><div class="ex-name">Option corde à sauter</div><div class="ex-note">Remplacer ou compléter le cardio par 5×1 min de corde / 30 sec récup. Excellent pour proprioception cheville.</div></div><span class="ex-sets">5 min</span></li>
+          <li><div><div class="ex-name">Retour au calme : trot léger</div></div><span class="ex-sets">3–5 min</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="materiel-grid" style="margin-top:32px;">
+      <div class="mat-card">
+        <h4>✅ Tu as déjà</h4>
+        <ul>
+          <li>Tapis de sol (mobilité + gainage)</li>
+          <li>Élastique glute bridge</li>
+          <li>Élastique résistant traction</li>
+          <li>Haltère ajustable 10 kg</li>
+          <li>2 ballons de basket</li>
+        </ul>
+      </div>
+      <div class="mat-card">
+        <h4>🛒 À envisager (priorité)</h4>
+        <ul>
+          <li>Corde à sauter ~15–20€ ← priorité n°1</li>
+          <li>Cônes / bouteilles d'eau — gratuit</li>
+          <li>Élastique de cheville ~10–15€</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== TAB : BASKET ===== -->
+<div id="tab-basket" class="tab-content">
+  <section>
+    <div class="section-label">Travail sur le terrain</div>
+    <div class="section-title">PROTOCOLES BASKET</div>
+
+    <div class="routine-block">
+      <div class="routine-title">🏀 SÉANCE PHASE 1 — TERRAIN <span class="rt-badge">45–60 MIN</span></div>
+      <div class="routine-content">
+        <ul class="exercise-list">
+          <li><div><div class="ex-name">Maniement balle sur place</div><div class="ex-note">Figure 8, crossover, entre-jambes. Automatiser sans regarder la balle.</div></div><span class="ex-sets">5–8 min</span></li>
+          <li><div><div class="ex-name">Dribble en déplacement (lent puis trot)</div><div class="ex-note">Main forte / faible alternées. Tête haute — regarder devant.</div></div><span class="ex-sets">5 min</span></li>
+          <li><div><div class="ex-name">Tirs en étoile — 5 spots</div><div class="ex-note">Face, 2×45°, 2×corners. 10 tirs par poste. Compter : objectif départ > 6/10.</div></div><span class="ex-sets">50 tirs</span></li>
+          <li><div><div class="ex-name">Tirs libres</div><div class="ex-note">Séries de 10. Même routine à chaque tir (respiration, rebond balle, visualisation).</div></div><span class="ex-sets">20–30 tirs</span></li>
+          <li><div><div class="ex-name">Layup droit + main gauche</div><div class="ex-note">Marcher d'abord, puis petit trot. Main faible = priorité absolue pour l'ailière.</div></div><span class="ex-sets">5 min</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="routine-block">
+      <div class="routine-title">🏀 SÉANCE PHASE 2/3 — TERRAIN <span class="rt-badge">60–75 MIN</span></div>
+      <div class="routine-content">
+        <ul class="exercise-list">
+          <li><div><div class="ex-name">Dribble en vitesse (full court ou aller-retour)</div><div class="ex-note">2 min chrono : main forte aller / faible retour. Accélérer progressivement.</div></div><span class="ex-sets">4 séries</span></li>
+          <li><div><div class="ex-name">Tirs en condition fatigue</div><div class="ex-note">Sprint 20m → tir direct. Ou : 5 pompes → aller au panier. Reproduit le jeu réel.</div></div><span class="ex-sets">20 tirs</span></li>
+          <li><div><div class="ex-name">Simulation coupe V-cut</div><div class="ex-note">Départ sous le panier, marcher vers le 3pts, couper brusquement vers le panier. Décision : couper → layup OU sortir → tir. Alterner les deux.</div></div><span class="ex-sets">10 min</span></li>
+          <li><div><div class="ex-name">Dribble slalom sous pression simulée</div><div class="ex-note">Slalom entre cônes (bouteilles d'eau). 30 sec ON / 30 sec OFF. Accélérations, changements de main.</div></div><span class="ex-sets">6 rounds</span></li>
+          <li><div><div class="ex-name">Finitions au panier : finger roll + floater</div><div class="ex-note">2 finitions à développer pour la D3 où les défenses sont plus hautes et centrales.</div></div><span class="ex-sets">10 min</span></li>
+          <li><div><div class="ex-name">Tirs libres de pression mentale</div><div class="ex-note">5 tirs → si 4/5 réussis, tu peux arrêter. Sinon, 5 de plus. Entraîner la précision sous pression.</div></div><span class="ex-sets">Variable</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="routine-block">
+      <div class="routine-title">🏀 SÉANCE PHASE 4 — MATCH-LIKE <span class="rt-badge">60–90 MIN</span></div>
+      <div class="routine-content">
+        <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">Simulation conditions de match. Tout enchaîner sans pause longue.</p>
+        <ul class="exercise-list">
+          <li><div><div class="ex-name">Échauffement complet dynamique</div><div class="ex-note">Comme avant un vrai match : trot, étirements dynamiques, maniement</div></div><span class="ex-sets">10 min</span></li>
+          <li><div><div class="ex-name">Série de 3 sprints + layup</div><div class="ex-note">Sprint, layup, récup 20 sec, recommencer. Simule la contre-attaque.</div></div><span class="ex-sets">8 reps</span></li>
+          <li><div><div class="ex-name">Tirs sur tous tes spots favoris</div><div class="ex-note">45° droit, 45° gauche, face, mid-range. 8 tirs par spot.</div></div><span class="ex-sets">32 tirs</span></li>
+          <li><div><div class="ex-name">Enchaînement défense → attaque</div><div class="ex-note">5 defensive slides → sprint → tir. Sans interruption. Répéter 6 fois.</div></div><span class="ex-sets">6 reps</span></li>
+          <li><div><div class="ex-name">Tirs libres en fatigue (fin de séance)</div><div class="ex-note">10 tirs libres après tout le reste. Compter et noter.</div></div><span class="ex-sets">10 tirs</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>⚡ TRAVAIL SPÉCIFIQUE : DÉFENSE SUR MENEUSE RAPIDE</h4>
+      <ul>
+        <li><strong>Defensive slides</strong> : position basse (cuisses quasi-parallèles), pieds qui ne se touchent jamais, tête au niveau des épaules adverses. 15 sec intensité max.</li>
+        <li><strong>Drop step</strong> : quand la meneuse passe, pivoter rapidement (pied derrière, rotation hanches). S'entraîner sans ballon à la maison, face à un mur.</li>
+        <li><strong>Résister aux feintes</strong> : face à un mur, imaginer une feinte, résister à l'envie de bouger les pieds. Clé absolue contre les rapides.</li>
+        <li><strong>5-3-5</strong> (phase 3) : 5 pas latéraux → toucher le sol → 3 pas retour → toucher le sol → 5 pas. En série de 4, récup 30 sec.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- ===== TAB : NUTRITION ===== -->
+<div id="tab-nutrition" class="tab-content">
+  <section>
+    <div class="section-label">Plan alimentaire détaillé</div>
+    <div class="section-title">NUTRITION POUR PERFORMER ET S'AFFINER</div>
+
+    <p style="font-size:13px; color:var(--orange); font-weight:600; margin-bottom:20px;">⚠️ Ces recommandations sont des lignes directrices générales adaptées à ton profil. Pour un suivi précis, consulte un diététicien du sport.</p>
+
+    <!-- INTRO STRATÉGIE -->
+    <div class="nutrition-intro">
+      <h4>LA STRATÉGIE : RECOMPOSITION CORPORELLE</h4>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">Ton objectif c'est de <strong>perdre de la masse grasse (~35% actuellement) tout en préservant et révélant ta masse musculaire (~60%)</strong>. Tu ne veux pas "maigrir" — tu veux changer ta composition corporelle. Ça demande une approche précise, pas restrictive.</p>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">À 75 kg avec ton niveau d'activité (37h/semaine + 3–4 séances/semaine), ton besoin calorique de maintenance est estimé autour de <strong>2 000–2 200 kcal/jour</strong>. On vise un déficit modéré et intelligent pour préserver le muscle :</p>
+      <div class="calorie-bar">
+        <h5>Objectif calorique selon le type de journée</h5>
+        <div style="margin-bottom:10px;">
+          <div class="bar-label" style="margin-bottom:3px;"><span>Jour repos</span><span style="color:var(--court);font-weight:700;">~1 650–1 750 kcal</span></div>
+          <div class="bar-wrap"><div class="bar-fill" style="width:75%; background:var(--court-light);"></div></div>
+        </div>
+        <div style="margin-bottom:10px;">
+          <div class="bar-label" style="margin-bottom:3px;"><span>Jour séance maison</span><span style="color:var(--court);font-weight:700;">~1 800–1 900 kcal</span></div>
+          <div class="bar-wrap"><div class="bar-fill" style="width:82%; background:var(--court-mid);"></div></div>
+        </div>
+        <div>
+          <div class="bar-label" style="margin-bottom:3px;"><span>Jour séance basket / cardio intense</span><span style="color:var(--orange);font-weight:700;">~2 000–2 100 kcal</span></div>
+          <div class="bar-wrap"><div class="bar-fill" style="width:92%; background:var(--orange);"></div></div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);">On ne compte pas les calories à l'obsession — on ajuste <strong>par type de journée</strong>. Plus simple, plus durable.</p>
+    </div>
+
+    <!-- MACRONUTRIMENTS -->
+    <div class="routine-block">
+      <div class="routine-title">📊 TES MACRONUTRIMENTS CIBLES <span class="rt-badge">PAR JOUR</span></div>
+      <div class="routine-content">
+        <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">Basés sur ton poids, ta masse musculaire importante et ton objectif de recomposition.</p>
+        <div class="macro-grid">
+          <div class="macro-card">
+            <div class="macro-val">130<span style="font-size:16px">–150</span></div>
+            <div class="macro-unit">grammes/jour</div>
+            <div class="macro-name">🥩 Protéines</div>
+            <div class="macro-note">~1,7–2g/kg. Préserver et révéler le muscle. Priorité absolue.</div>
+          </div>
+          <div class="macro-card">
+            <div class="macro-val">150<span style="font-size:16px">–200</span></div>
+            <div class="macro-unit">grammes/jour</div>
+            <div class="macro-name">🍚 Glucides</div>
+            <div class="macro-note">Modulés selon l'activité. Plus le jour de basket, moins le jour de repos.</div>
+          </div>
+          <div class="macro-card">
+            <div class="macro-val">55<span style="font-size:16px">–65</span></div>
+            <div class="macro-unit">grammes/jour</div>
+            <div class="macro-name">🫒 Lipides</div>
+            <div class="macro-note">Bonnes graisses essentielles. Ne pas descendre en dessous de 50g.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAN JOURNALIER PAR TYPE DE JOUR -->
+    <div class="section-label" style="margin-top:32px;">Plans journaliers</div>
+    <div class="section-title" style="font-size:28px;">CE QUE TU MANGES CHAQUE JOUR</div>
+
+    <div class="day-type-tabs">
+      <button class="day-type-btn active" onclick="showDayType('nutrA', this)">🏋️ Jour séance maison</button>
+      <button class="day-type-btn" onclick="showDayType('nutrB', this)">🏀 Jour basket / cardio</button>
+      <button class="day-type-btn" onclick="showDayType('nutrC', this)">😴 Jour de repos</button>
+    </div>
+
+    <div id="daytype-nutrA" class="day-type-content active">
+      <div class="meal-plan-grid">
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-name">Petit-déjeuner</span><span class="meal-cal">~400–450 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Protéines</span><div class="meal-options"><span class="meal-option">2 œufs brouillés / à la coque</span><span class="meal-option">OU 150g fromage blanc 0%</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Glucides</span><div class="meal-options"><span class="meal-option">60g flocons d'avoine cuits</span><span class="meal-option">OU 2 tranches pain complet</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Fruits</span><div class="meal-options"><span class="meal-option">1 fruit frais (banane, pomme, poire, kiwi)</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Boisson</span><div class="meal-options"><span class="meal-option">Café / thé sans sucre + eau</span></div></div>
+          </div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-name">Déjeuner</span><span class="meal-cal">~550–600 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Protéines</span><div class="meal-options"><span class="meal-option">130–150g poulet / dinde / bœuf 5%</span><span class="meal-option">OU 150g thon / saumon</span><span class="meal-option">OU 200g légumineuses (lentilles, pois chiches)</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Féculents</span><div class="meal-options"><span class="meal-option">150g riz complet / quinoa / patate douce cuits</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Légumes</span><div class="meal-options"><span class="meal-option">Légumes verts à volonté (haricots, brocoli, courgette, salade…)</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Matière grasse</span><div class="meal-options"><span class="meal-option">1 c.à.s. huile d'olive</span></div></div>
+          </div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">🌆</span><span class="meal-name">Collation pré-séance (vers 17–18h)</span><span class="meal-cal">~200–250 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Option 1</span><div class="meal-options"><span class="meal-option">1 yaourt nature ou grec + 1 fruit frais</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Option 2</span><div class="meal-options"><span class="meal-option">2 tranches pain complet + 1–2 c.à.s. fromage frais type St Môret ou beurre de cacahuète (si tu tolères)</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Hydratation</span><div class="meal-options"><span class="meal-option">Boire 50 cl d'eau avant la séance</span></div></div>
+          </div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-name">Dîner post-séance (dans l'heure)</span><span class="meal-cal">~450–500 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Protéines</span><div class="meal-options"><span class="meal-option">3 œufs (omelette, poché…)</span><span class="meal-option">OU 130g poisson blanc / poulet</span><span class="meal-option">OU 200g tofu / légumineuses</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Légumes</span><div class="meal-options"><span class="meal-option">Légumes cuits ou crus à volonté</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Féculents</span><div class="meal-options"><span class="meal-option">Portion légère : 80g riz / patate douce cuit (récup musculaire)</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Matière grasse</span><div class="meal-options"><span class="meal-option">1/2 avocats OU 1 c.à.s. huile d'olive</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="daytype-nutrB" class="day-type-content">
+      <div class="meal-plan-grid">
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-name">Petit-déjeuner</span><span class="meal-cal">~450–500 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Protéines</span><div class="meal-options"><span class="meal-option">2 œufs + 100g fromage blanc 0%</span><span class="meal-option">OU smoothie protéiné (fromage blanc + fruit + lait)</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Glucides</span><div class="meal-options"><span class="meal-option">70g flocons d'avoine</span><span class="meal-option">OU 2 tranches pain complet + confiture sans sucre ajouté</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Fruits</span><div class="meal-options"><span class="meal-option">1 banane (énergie lente + potassium)</span></div></div>
+          </div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-name">Déjeuner (repas principal)</span><span class="meal-cal">~600–650 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Protéines</span><div class="meal-options"><span class="meal-option">150–160g viande blanche / poisson / œufs (3)</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Féculents</span><div class="meal-options"><span class="meal-option">200g riz complet / pâtes complètes / patate douce cuits — plus que d'habitude !</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Légumes</span><div class="meal-options"><span class="meal-option">À volonté</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Matière grasse</span><div class="meal-options"><span class="meal-option">1 c.à.s. huile d'olive</span></div></div>
+          </div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">⚡</span><span class="meal-name">Collation 1h30 avant la séance basket</span><span class="meal-cal">~200–250 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Option matin</span><div class="meal-options"><span class="meal-option">Si séance le matin : petit-déjeuner complet 2h avant</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Option soir</span><div class="meal-options"><span class="meal-option">1 fruit + 1 yaourt OR 1 tranche pain complet</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">⚠️ Éviter</span><div class="meal-options"><span class="meal-option">Rien de gras, rien de lourd dans les 2h avant</span></div></div>
+          </div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-name">Dîner post-basket (récupération clé)</span><span class="meal-cal">~500 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Protéines</span><div class="meal-options"><span class="meal-option">150g viande / poisson / 3 œufs</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Féculents</span><div class="meal-options"><span class="meal-option">120g riz / quinoa / lentilles — fenêtre anabolique post-effort</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Légumes</span><div class="meal-options"><span class="meal-option">Légumes cuits à volonté</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Bonus récup</span><div class="meal-options"><span class="meal-option">1 yaourt grec avant de dormir si faim (protéines lentes)</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="daytype-nutrC" class="day-type-content">
+      <div class="meal-plan-grid">
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-name">Petit-déjeuner</span><span class="meal-cal">~350–400 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Protéines</span><div class="meal-options"><span class="meal-option">2 œufs OU 150g fromage blanc 0%</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Glucides</span><div class="meal-options"><span class="meal-option">50g flocons d'avoine OU 1 tranche pain complet</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Fruits</span><div class="meal-options"><span class="meal-option">1 fruit frais — éviter la banane les jours repos (index glycémique)</span></div></div>
+          </div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-name">Déjeuner</span><span class="meal-cal">~500–550 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Protéines</span><div class="meal-options"><span class="meal-option">130–150g poulet / thon / lentilles / œufs</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Féculents</span><div class="meal-options"><span class="meal-option">Réduire légèrement : 100–120g riz / quinoa / pois chiches cuits</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Légumes</span><div class="meal-options"><span class="meal-option">Légumes verts à volonté — priorité !</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Matière grasse</span><div class="meal-options"><span class="meal-option">1 c.à.s. huile d'olive OU 1/4 avocats</span></div></div>
+          </div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">🌆</span><span class="meal-name">Collation (si faim, sinon passer)</span><span class="meal-cal">~150 kcal max</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Options</span><div class="meal-options"><span class="meal-option">1 yaourt nature 0%</span><span class="meal-option">OU 1 fruit frais</span><span class="meal-option">OU légumes crus avec houmous maison</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Éviter</span><div class="meal-options"><span class="meal-option">Grignotage sucré, biscuits, jus de fruit</span></div></div>
+          </div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-name">Dîner</span><span class="meal-cal">~450 kcal</span></div>
+          <div class="meal-body">
+            <div class="meal-type-row"><span class="meal-type-label">Protéines</span><div class="meal-options"><span class="meal-option">130g viande blanche / poisson blanc / 3 œufs</span><span class="meal-option">OU soupe de légumes + 150g légumineuses</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Légumes</span><div class="meal-options"><span class="meal-option">Légumes verts à volonté (soupe, poêlée, crudités)</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Féculents</span><div class="meal-options"><span class="meal-option">Optionnel ou très léger : 80g max</span></div></div>
+            <div class="meal-type-row"><span class="meal-type-label">Matière grasse</span><div class="meal-options"><span class="meal-option">1 c.à.s. huile d'olive</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALIMENTS À FAVORISER / ÉVITER -->
+    <div class="section-label" style="margin-top:36px;">Tes aliments</div>
+    <div class="section-title" style="font-size:28px;">CE QU'IL FAUT METTRE DANS LE FRIGO</div>
+    <div class="foods-grid">
+      <div class="foods-card">
+        <h5>🥩 Protéines (base)</h5>
+        <ul>
+          <li>Poulet, dinde (toutes préparations)</li>
+          <li>Bœuf 5% MG haché</li>
+          <li>Thon en boîte (au naturel)</li>
+          <li>Saumon, cabillaud, lieu</li>
+          <li>Œufs (à volonté)</li>
+          <li>Fromage blanc 0–3%</li>
+          <li>Yaourt grec nature</li>
+          <li>Lentilles, pois chiches, haricots rouges</li>
+          <li>Tofu, tempeh</li>
+        </ul>
+      </div>
+      <div class="foods-card">
+        <h5>🍚 Glucides complexes</h5>
+        <ul>
+          <li>Riz complet / basmati</li>
+          <li>Quinoa</li>
+          <li>Patate douce</li>
+          <li>Pâtes complètes</li>
+          <li>Pain complet ou seigle</li>
+          <li>Flocons d'avoine</li>
+          <li>Pomme de terre (cuite vapeur)</li>
+        </ul>
+      </div>
+      <div class="foods-card">
+        <h5>🥦 Légumes prioritaires</h5>
+        <ul>
+          <li>Brocoli, épinards, courgette</li>
+          <li>Haricots verts</li>
+          <li>Salade, roquette, mâche</li>
+          <li>Tomates, concombre, poivron</li>
+          <li>Champignons</li>
+          <li>Choux (chou-fleur, chou rouge)</li>
+          <li>Carottes (crues surtout)</li>
+        </ul>
+      </div>
+      <div class="foods-card">
+        <h5>🫒 Bonnes graisses</h5>
+        <ul>
+          <li>Huile d'olive extra vierge</li>
+          <li>Avocats</li>
+          <li>Beurre de cacahuète (sans sucre ajouté) — si tu tolères les arachides</li>
+          <li>Graines de chia, lin, chanvre</li>
+          <li>Saumon (graisses oméga-3)</li>
+        </ul>
+      </div>
+      <div class="foods-card">
+        <h5>🍎 Fruits recommandés</h5>
+        <ul>
+          <li>Banane (avant effort)</li>
+          <li>Pomme, poire (fibres)</li>
+          <li>Kiwi (vitamine C, récup)</li>
+          <li>Fruits rouges (antioxydants)</li>
+          <li>Orange, pamplemousse</li>
+          <li class="no">Éviter jus de fruits (sucre rapide)</li>
+        </ul>
+      </div>
+      <div class="foods-card">
+        <h5>⚠️ Allergies / à éviter</h5>
+        <ul>
+          <li class="no">Fruits de mer (allergie)</li>
+          <li class="no">Amandes, noix, noisettes, cajou, pistaches</li>
+          <li class="no">Sucres ajoutés, sodas, jus industriels</li>
+          <li class="no">Aliments ultra-transformés</li>
+          <li class="no">Alcool (ennemi de la récup + perte grasse)</li>
+          <li class="no">Grignotage tarif (biscuits, chips)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HYDRATATION -->
+    <div class="highlight-box" style="margin-top:28px;">
+      <h4>💧 HYDRATATION — LA VARIABLE OUBLIÉE</h4>
+      <ul>
+        <li>Objectif : <strong>2 à 2,5 L d'eau par jour</strong> minimum — plus en été et les jours de séance.</li>
+        <li>Commencer la journée par <strong>1 grand verre d'eau à jeun</strong> avant le café.</li>
+        <li>Boire <strong>50 cl</strong> dans les 2h avant une séance basket.</li>
+        <li>Pendant la séance : siroter régulièrement, ne pas attendre la soif.</li>
+        <li>Après l'effort : eau plate + 1 pincée de sel si tu as beaucoup transpiré (rééquilibre les électrolytes).</li>
+        <li>Le signe que tu bois assez : urines claires à jaune pâle.</li>
+      </ul>
+    </div>
+
+    <!-- SUPPLÉMENTS -->
+    <div class="routine-block" style="margin-top:20px;">
+      <div class="routine-title">💊 SUPPLÉMENTS UTILES (optionnel)</div>
+      <div class="routine-content">
+        <ul class="exercise-list">
+          <li><div><div class="ex-name">Magnésium (glycinate ou malate)</div><div class="ex-note">Fatigue musculaire, crampes, qualité du sommeil. Prendre le soir.</div></div><span class="ex-sets">200–300 mg/soir</span></li>
+          <li><div><div class="ex-name">Vitamine D3</div><div class="ex-note">Surtout si tu n'es pas beaucoup dehors. Immunité + énergie + récupération.</div></div><span class="ex-sets">1 000–2 000 UI/jour</span></li>
+          <li><div><div class="ex-name">Protéines en poudre (whey ou végétale)</div><div class="ex-note">Seulement si tu as du mal à atteindre 130–150g de protéines via l'alimentation. Pas indispensable.</div></div><span class="ex-sets">Si besoin</span></li>
+          <li><div><div class="ex-name">Oméga-3</div><div class="ex-note">Anti-inflammatoire, récupération articulaire. Intéressant si tu ne manges pas de poisson gras régulièrement.</div></div><span class="ex-sets">1–2g/jour</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== TAB : PROGRESSION ===== -->
+<div id="tab-progression" class="tab-content">
+  <section>
+    <div class="section-label">Objectifs chiffrés</div>
+    <div class="section-title">TES CIBLES DE PROGRESSION</div>
+
+    <p style="color:var(--muted); font-size:14px; margin-bottom:24px;">Ces objectifs sont basés sur ton niveau de départ (fin de saison D4). Ils sont ambitieux mais atteignables avec un travail régulier. À mesurer à la fin de chaque phase.</p>
+
+    <div class="goal-grid">
+      <div class="goal-card">
+        <div class="goal-phase">Tirs libres — Départ estimé</div>
+        <div class="goal-metric">55<span class="goal-unit">%</span></div>
+        <div class="goal-desc">Tirs libres réussis</div>
+        <div class="goal-note">Sur une série de 20 tirs</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-phase">Tirs libres — Objectif fin d'été</div>
+        <div class="goal-metric" style="color:var(--court);">70<span class="goal-unit">%</span></div>
+        <div class="goal-desc">Tirs libres réussis</div>
+        <div class="goal-note">+3 paniers sur 20 avec routine stable</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-phase">Tirs à 45° — Départ estimé</div>
+        <div class="goal-metric">6<span class="goal-unit">/10</span></div>
+        <div class="goal-desc">Côté dominant</div>
+        <div class="goal-note">Ton spot favori, conditions fraîches</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-phase">Tirs à 45° — Objectif fin d'été</div>
+        <div class="goal-metric" style="color:var(--court);">8<span class="goal-unit">/10</span></div>
+        <div class="goal-desc">Côté dominant + côté faible ≥ 6/10</div>
+        <div class="goal-note">Après fatigue (tirs en condition de jeu)</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-phase">Dribble — Départ estimé</div>
+        <div class="goal-metric">4<span class="goal-unit">–6</span></div>
+        <div class="goal-desc">Pertes de balle / 2 min</div>
+        <div class="goal-note">Slalom avec pression simulée</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-phase">Dribble — Objectif fin d'été</div>
+        <div class="goal-metric" style="color:var(--court);">1<span class="goal-unit">–2</span></div>
+        <div class="goal-desc">Pertes de balle / 2 min</div>
+        <div class="goal-note">Maniement automatisé, tête haute</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-phase">Composition corporelle — Départ</div>
+        <div class="goal-metric">35<span class="goal-unit">%</span></div>
+        <div class="goal-desc">Masse grasse estimée</div>
+        <div class="goal-note">75 kg — mesure basique Basic Fit</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-phase">Composition corporelle — Objectif</div>
+        <div class="goal-metric" style="color:var(--court);">28<span class="goal-unit">–30%</span></div>
+        <div class="goal-desc">Masse grasse visée</div>
+        <div class="goal-note">Réaliste en 3 mois avec déficit modéré et entraînement</div>
+      </div>
+    </div>
+
+    <hr style="margin: 32px 0;">
+
+    <div class="section-label">Suivi régulier</div>
+    <div class="section-title" style="font-size:28px;">COMMENT MESURER TES PROGRÈS</div>
+
+    <table class="progress-table">
+      <thead>
+        <tr>
+          <th>Indicateur</th>
+          <th>Comment mesurer</th>
+          <th>Objectif fin d'été</th>
+          <th>Fréquence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tirs libres</td>
+          <td>Série de 20 tirs en conditions fraîches</td>
+          <td>≥ 14/20 (70%)</td>
+          <td>Toutes les 2–3 sem.</td>
+        </tr>
+        <tr>
+          <td>Tirs à 45° (côté fort)</td>
+          <td>10 tirs depuis ton spot favori</td>
+          <td>≥ 8/10</td>
+          <td>Toutes les 2–3 sem.</td>
+        </tr>
+        <tr>
+          <td>Tirs à 45° (côté faible)</td>
+          <td>10 tirs côté non dominant</td>
+          <td>≥ 6/10</td>
+          <td>Toutes les 2–3 sem.</td>
+        </tr>
+        <tr>
+          <td>Tirs en fatigue</td>
+          <td>10 tirs après 3 sprints de 20m</td>
+          <td>≥ 6/10</td>
+          <td>Fin de phase 2, 3, 4</td>
+        </tr>
+        <tr>
+          <td>Dribble sous pression</td>
+          <td>Compter les pertes sur 2 min de slalom</td>
+          <td>≤ 2 pertes</td>
+          <td>Toutes les 2–3 sem.</td>
+        </tr>
+        <tr>
+          <td>Défense latérale</td>
+          <td>Chrono : 10 slides aller-retour (8m)</td>
+          <td>Réduction du temps ressenti</td>
+          <td>Fin de phase</td>
+        </tr>
+        <tr>
+          <td>Cardio / récupération</td>
+          <td>Ressenti subjectif 1–10 après le fractionné</td>
+          <td>8–10 en phase 1 → 5–6 en phase 4</td>
+          <td>Chaque séance cardio</td>
+        </tr>
+        <tr>
+          <td>Poids / composition</td>
+          <td>Peser le matin à jeun, même balance, 1x/semaine</td>
+          <td>–3 à –5 kg, surtout ressentir la légèreté</td>
+          <td>1x / semaine (lundi)</td>
+        </tr>
+        <tr>
+          <td>Ressenti général</td>
+          <td>Note de 1 à 10 : énergie, légèreté, confiance</td>
+          <td>7–8 / 10 en phase 4</td>
+          <td>Fin de chaque semaine</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box" style="margin-top:28px;">
+      <h4>📓 CARNET DE BORD — L'OUTIL LE PLUS PUISSANT</h4>
+      <ul>
+        <li>5 lignes par séance suffisent : ce que tu as fait, comment tu t'es sentie, 1 point positif, 1 à améliorer.</li>
+        <li>Note tes scores de tir à chaque séance basket. En les relisant, tu verras la progression concrète.</li>
+        <li>Relis-le avant la reprise en septembre : c'est ton capital confiance construit cet été.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- ===== TAB : MENTAL ===== -->
+<div id="tab-mental" class="tab-content">
+  <section>
+    <div class="section-label">Préparation mentale</div>
+    <div class="section-title">LA TÊTE AUSSI ÇA SE TRAVAILLE</div>
+    <div class="tip-list">
+      <div class="tip">
+        <div class="tip-num">01</div>
+        <div class="tip-text">
+          <strong>Routine de tir libre inviolable</strong>
+          <p>Crée une séquence identique à chaque tir libre : 1 dribble → inspiration → visualiser la balle rentrer → expiration → tirer. Répète-la à chaque tir cet été. En match D3, ta routine t'isole de la pression et de la fatigue.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">02</div>
+        <div class="tip-text">
+          <strong>Visualisation avant les séances basket</strong>
+          <p>2–3 minutes avant de commencer, ferme les yeux. Visualise 3 actions que tu veux bien faire ce jour-là : une coupe réussie, un tir rentré, un stop propre sur une meneuse rapide. Ça programme le cerveau autant que l'exercice physique.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">03</div>
+        <div class="tip-text">
+          <strong>Reformuler les erreurs en données</strong>
+          <p>"J'ai perdu la balle" → "J'ai trouvé une situation à travailler". "Je n'ai pas mis ce tir" → "Mon pied d'appel n'était pas au bon endroit". La D3 sera plus rapide, les erreurs seront plus fréquentes au début — ce sont les données de ta progression, pas des preuves de tes limites.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">04</div>
+        <div class="tip-text">
+          <strong>Ancrer ta force : le leadership et l'encouragement</strong>
+          <p>Tu sais que ta motivation et ta façon d'encourager l'équipe sont tes super-pouvoirs. En D3, ça va encore plus compter. Cet été, continue de te définir comme ça : pas juste une joueuse qui travaille ses tirs, mais quelqu'un qui tire son équipe vers le haut.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">05</div>
+        <div class="tip-text">
+          <strong>Préparer sa confiance pour septembre</strong>
+          <p>En phase 4, avant les premiers entraînements, prends une feuille et note : tout ce que tu as fait cet été, 3 progrès concrets (avec des chiffres de tes tirs), 2 situations de jeu que tu gères mieux. Relis-la avant chaque séance de reprise. Tu arrives en D3 préparée — pas par hasard.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">06</div>
+        <div class="tip-text">
+          <strong>Se donner le droit de rater des séances</strong>
+          <p>La vie, c'est 37h de boulot plus une vie sociale. Si tu rates une séance : tu ne reprends pas le lendemain avec 2 séances pour "rattraper". Tu reprends normalement à la prochaine séance prévue. La régularité sur 3 mois vaut bien plus que 2 semaines parfaites suivies d'un abandon.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:32px;">
+      <h4>🏆 CE QUI FERA LA DIFFÉRENCE EN D3</h4>
+      <ul>
+        <li>Tu auras une vraie vitesse latérale défensive — tu ne te feras plus autant déborder par les meneuses rapides</li>
+        <li>Tes tirs seront stables même en fatigue — tu pourras punir les espaces ouverts en fin de match</li>
+        <li>Tu perdras moins la balle en mène sous pression — tu seras une option fiable pour ton coach</li>
+        <li>Ton corps sera plus léger et plus explosif — tes contre-attaques seront encore plus tranchantes</li>
+        <li>Tu arriveras en confiance parce que tu <em>sais</em> exactement ce que tu as fait cet été</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  Plan construit pour la saison <strong>D3 Loire-Atlantique 2026–2027</strong> · Scénario A : 1er juin → fin août · Scénario B : 15 juin → fin août · 3–4 séances/semaine
+</div>
+
+<script>
+  function showTab(name) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function showDayType(name, btn) {
+    // Find parent tab content
+    const parent = btn.closest('.tab-content') || document.body;
+    parent.querySelectorAll('.day-type-content').forEach(el => el.classList.remove('active'));
+    parent.querySelectorAll('.day-type-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('daytype-' + name).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
